@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './index.less';
 
 export default () => {
+  console.log('login')
   return (
     <div>
       <h1 className={styles.title}>Page login/index</h1>

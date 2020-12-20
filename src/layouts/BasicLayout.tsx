@@ -3,6 +3,7 @@ import 'antd-mobile/dist/antd-mobile.css';
 import {Location, Dispatch, connect} from 'umi';
 import {ConnectState, ConnectProps, UserModelState} from '@/models/connect';
 import BottomNav from "@/components/BottomNav/BottomNav";
+import SecurityLayout from "@/layouts/SecurityLayout";
 
 interface BasicLayoutProps {
   location: Location,
@@ -26,7 +27,9 @@ const BasicLayout: React.FC<BasicLayoutProps> = (props) => {
   console.log('props', props)
   return (
     <div className="BasicLayoutWrap">
-      <article>{children}</article>
+      <SecurityLayout user={user} key={'123'}>
+          <article>{children}</article>
+      </SecurityLayout>
       <BottomNav pathname={pathname}/>
     </div>
   );

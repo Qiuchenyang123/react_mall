@@ -11,17 +11,17 @@ const menu = [
   },
   {
     title: '购物车',
-    link: '/cart',
+    link: '/security/cart',
     icon: 'icon4'
   },
   {
     title: '订单列表',
-    link: '/orderList',
+    link: '/security/orderList',
     icon: 'weibiaoti-'
   },
   {
     title: '我的',
-    link: '/user',
+    link: '/security/user',
     icon: 'biaoqiankuozhan_wode-140'
   },
 

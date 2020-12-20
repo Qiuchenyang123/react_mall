@@ -93,7 +93,7 @@ const UserModel: UserModelType = {
   },
   reducers: {
     saveCurrentUser(state, action) {
-      return { ...state, currentUser: { ...action.payload } || {} };
+      return { ...state, ...action.payload };
     },
     /*clearUser(state, action) {
       return { ...action.payload };
