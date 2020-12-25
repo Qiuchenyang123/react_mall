@@ -1,6 +1,7 @@
 import React, {useEffect, ReactElement} from 'react';
-import {connect, Redirect} from 'umi';
+import {connect, Redirect, history} from 'umi';
 import {ConnectState, ConnectProps, UserModelState} from '@/models/connect';
+import BottomNav from '@/components/BottomNav/BottomNav';
 
 interface SecurityLayoutProps extends ConnectProps {
   user: UserModelState;
@@ -8,15 +9,23 @@ interface SecurityLayoutProps extends ConnectProps {
 }
 
 const SecurityLayout: React.FC<SecurityLayoutProps> = (props) => {
-  const {children, user} = props
-  // const {pathname} = location;
+  const {children, user, location} = props
+  const {pathname} = location;
 
-  console.log(14, user);
   const {userid} = user.currentUser;
-  if (userid) {
-    return children
+  const isLogin = !!userid;
+
+  if (isLogin) {
+    return (
+        <div>
+            <article>{children}</article>
+            <footer>
+                <BottomNav pathname={pathname}/>
+            </footer>
+        </div>
+    )
   } else {
-    return <Redirect to={'/login'} />
+    return <Redirect to={{pathname: '/login', state: {from: pathname}}} />
   }
 
 };
