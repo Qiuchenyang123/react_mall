@@ -6,22 +6,22 @@ import { history } from 'umi';
 const menu = [
   {
     title: '首页',
-    link: '/',
+    link: '/home',
     icon: 'shouye'
   },
   {
     title: '购物车',
-    link: '/security/cart',
+    link: '/cart',
     icon: 'icon4'
   },
   {
     title: '订单列表',
-    link: '/security/orderList',
+    link: '/orderList',
     icon: 'weibiaoti-'
   },
   {
     title: '我的',
-    link: '/security/user',
+    link: '/user',
     icon: 'biaoqiankuozhan_wode-140'
   },
 
